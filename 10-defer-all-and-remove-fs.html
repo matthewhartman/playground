@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html lang="en" class="ie9 no-js"><![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"eb6e23ee2b","applicationID":"93382982","transactionName":"NANVbUUHXkdXVUQIVw1Jem90SWNdQlNTDkoGJVhXQxRfWFpTQk5xDQJSQQ==","queueTime":0,"applicationTime":11943,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"XA4CVFdAAQADXFNbDwM=",licenseKey:"eb6e23ee2b",applicationID:"93382982"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(24),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{l?l-=1:o(s||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:c.now();i("err",[t,n])}var i=t("handle"),a=t(25),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,p="nr@seenError",l=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(13),t(12),"addEventListener"in window&&t(6),c.xhrWrappable&&t(14),d=!0)}s.on("fn-start",function(t,e,n){d&&(l+=1)}),s.on("fn-err",function(t,e,n){d&&!n[p]&&(f(n,p,function(){return!0}),this.thrown=!0,o(n))}),s.on("fn-end",function(){d&&!this.thrown&&l>0&&(l-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(){L++,C=g.hash,this[u]=y.now()}function o(){L--,g.hash!==C&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit("newURL",[""+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var s="-start",c="-end",f="-body",u="fn"+s,d="fn"+c,p="cb"+s,l="cb"+c,h="jsTime",m="fetch",v="addEventListener",w=window,g=w.location,y=t("loader");if(w[v]&&y.xhrWrappable){var x=t(10),b=t(11),E=t(8),R=t(6),O=t(13),N=t(7),P=t(14),M=t(9),T=t("ee"),S=T.get("tracer");t(16),y.features.spa=!0;var C,L=0;T.on(u,r),T.on(p,r),T.on(d,o),T.on(l,o),T.buffer([u,d,"xhr-done","xhr-resolved"]),R.buffer([u]),O.buffer(["setTimeout"+c,"clearTimeout"+s,u]),P.buffer([u,"new-xhr","send-xhr"+s]),N.buffer([m+s,m+"-done",m+f+s,m+f+c]),E.buffer(["newURL"]),x.buffer([u]),b.buffer(["propagate",p,l,"executor-err","resolve"+s]),S.buffer([u,"no-"+u]),M.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(P,"send-xhr"+s),a(T,"xhr-resolved"),a(T,"xhr-done"),a(N,m+s),a(N,m+"-done"),a(M,"new-jsonp"),a(M,"jsonp-end"),a(M,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,!0),w[v]("load",i,!0),w[v]("popstate",function(){i(0,L>1)},!0)}},{}],5:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(13),s=t(12),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",p="resource",l="-start",h="-end",m="fn"+l,v="fn"+h,w="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(8),"addEventListener"in window&&t(6);var x=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),o.on(v,function(t,e){var n=t[0];n instanceof x&&i("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(v,function(t,e){i(w,[e,this.bstStart,y.now(),this.bstType])}),s.on(m,function(){this.bstStart=y.now()}),s.on(v,function(t,e){i(w,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),o.on(g+l,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),o.on(g+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=i(arguments),e={};o.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return o.emit(n+"start",[t,a],s),s.then(function(t){return o.emit(n+"end",[null,t],s),t},function(t){throw o.emit(n+"end",[t],s),t})})}var o=t("ee").get("fetch"),i=t(25),a=t(24);e.exports=o;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,p=s.Response,l=s.fetch,h="prototype",m="nr@context";d&&p&&l&&(a(u,function(t,e){r(d[h],e,f),r(p[h],e,f)}),r(s,"fetch",c),o.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(c+"done",[null,e],n)}else o.emit(c+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),o=t("wrap-function")(r);e.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){function r(t){function e(){c.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}function n(){c.emit("jsonp-error",[],p),c.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var u=s(a),d="function"==typeof u.parent[u.key];if(d){var p={};f.inPlace(u.parent,[u.key],"cb-",p),t.addEventListener("load",e,!1),t.addEventListener("error",n,!1),c.emit("new-jsonp",[t.src],p)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(u);return e?e[1]:null}function a(t,e){var n=t.match(p),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function s(t){var e=t.match(d);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var c=t("ee").get("jsonp"),f=t("wrap-function")(c);if(e.exports=c,o()){var u=/[?&](?:callback|cb)=([^&#]+)/,d=/(.*)\.([^.]+)/,p=/^(\w+)(\.|$)(.*)$/,l=["appendChild","insertBefore","replaceChild"];Node&&Node.prototype&&Node.prototype.appendChild?f.inPlace(Node.prototype,l,"dom-"):(f.inPlace(HTMLElement.prototype,l,"dom-"),f.inPlace(HTMLHeadElement.prototype,l,"dom-"),f.inPlace(HTMLBodyElement.prototype,l,"dom-")),c.on("dom-start",function(t){r(t[0])})}},{}],10:[function(t,e,n){var r=t("ee").get("mutation"),o=t("wrap-function")(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],11:[function(t,e,n){function r(t){var e=a.context(),n=s(t,"executor-",e),r=new f(n);return a.context(r).getCtx=function(){return e},a.emit("new-promise",[r,e],e),r}function o(t,e){return e}var i=t("wrap-function"),a=t("ee").get("promise"),s=i(a),c=t(24),f=NREUM.o.PR;e.exports=a,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){a.emit("propagate",[null,!o],i),o=o||!t}}var o=!1;c(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var i=e.apply(f,arguments),s=f.resolve(i);return s}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&a.emit("propagate",[t,!0],n),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),c(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),a.on("executor-start",function(t){t[0]=s(t[0],"resolve-",this),t[1]=s(t[1],"resolve-",this)}),a.on("executor-err",function(t,e,n){t[1](n)}),s.inPlace(f.prototype,["then"],"then-",o),a.on("then-start",function(t,e){this.promise=e,t[0]=s(t[0],"cb-",this),t[1]=s(t[1],"cb-",this)}),a.on("then-end",function(t,e,n){this.nextPromise=n;var r=this.promise;a.emit("propagate",[r,!0],n)}),a.on("cb-end",function(t,e,n){a.emit("propagate",[n,!0],this.nextPromise)}),a.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=a.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],12:[function(t,e,n){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],13:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t("wrap-function")(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],14:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",s)}function i(t){y.push(t),h&&(b?b.then(a):v?v(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(6);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),p=NREUM.o,l=p.XHR,h=p.MO,m=p.PR,v=p.SI,w="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new l(t);try{u.emit("new-xhr",[e],e),e.addEventListener(w,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(l,x),x.prototype=l.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!v&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],15:[function(t,e,n){function r(){var t=window.NREUM;if(!t.loader_config)return null;var e=(t.loader_config.accountID||"").toString()||null,n=(t.loader_config.agentID||"").toString()||null,r=(t.loader_config.trustKey||"").toString()||null;if(!e||!n)return null;var a=i.generateCatId(),s=i.generateCatId(),c=Date.now(),f=o(a,s,c,e,n,r);return{header:f,guid:a,traceId:s,timestamp:c}}function o(t,e,n,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:e,ti:n}};return i&&r!==i&&(s.d.tk=i),btoa(JSON.stringify(s))}var i=t(22);e.exports={generateTracePayload:r,generateTraceHeader:o}},{}],16:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(p[r],this.listener,!1);e.aborted||(n.duration=s.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):a(this,t),n.cbTime=this.cbTime,d.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return v(r)}function i(t,e){var n=f(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}function a(t,e){t.params.status=e.status;var n=o(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var s=t("loader");if(s.xhrWrappable){var c=t("handle"),f=t(17),u=t(15).generateTracePayload,d=t("ee"),p=["load","error","abort","timeout"],l=p.length,h=t("id"),m=t(20),v=t(19),w=window.XMLHttpRequest;s.features.xhr=!0,t(14),t(7),d.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){a(e,t)},!1),m&&(m>34||m<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),d.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),d.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=!1;if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=!!NREUM.init.distributed_tracing.enabled),n&&this.sameOrigin){var r=u();r&&r.header&&(e.setRequestHeader("newrelic",r.header),this.dt=r)}}),d.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=v(r);i&&(n.txSize=i)}this.startTime=s.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{d.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<l;a++)e.addEventListener(p[a],this.listener,!1)}),d.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),d.on("xhr-load-added",function(t,e){var n=""+h(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),d.on("xhr-load-removed",function(t,e){var n=""+h(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),d.on("addEventListener-end",function(t,e){e instanceof w&&"load"===t[0]&&d.emit("xhr-load-added",[t[1],t[2]],e)}),d.on("removeEventListener-end",function(t,e){e instanceof w&&"load"===t[0]&&d.emit("xhr-load-removed",[t[1],t[2]],e)}),d.on("fn-start",function(t,e,n){e instanceof w&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=s.now()))}),d.on("fn-end",function(t,e){this.xhrCbStart&&d.emit("xhr-cb-time",[s.now()-this.xhrCbStart,this.onload,e],e)}),d.on("fetch-before-start",function(t){var e,n=t[1]||{};"string"==typeof t[0]?e=t[0]:t[0]&&t[0].url&&(e=t[0].url),e&&(this.sameOrigin=f(e).sameOrigin);var r=!1;if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(r=!!NREUM.init.distributed_tracing.enabled),r&&this.sameOrigin){var o=u();if(!o||!o.header)return;var i=o.header;if("string"==typeof t[0]){var a={};for(var s in n)a[s]=n[s];a.headers=new Headers(n.headers||{}),a.headers.set("newrelic",i),this.dt=o,t.length>1?t[1]=a:t.push(a)}else t[0]&&t[0].headers&&(t[0].headers.append("newrelic",i),this.dt=o)}})}},{}],17:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],18:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[f.now()].concat(s(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(24),s=t(25),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){u[e]=o(p+e,!0,"api")}),u.addPageAction=o(p+"addPageAction",!0),u.setCurrentRouteName=o(p+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[f.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=o(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,e])}},{}],19:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],20:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],21:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?a("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&a("timing",["fcp",Math.floor(t.startTime)])})}function o(t){if(t instanceof c&&!u){var e,n=Math.round(t.timeStamp);e=n>1e12?Date.now()-n:s.now()-n,u=!0,a("timing",["fi",n,{type:t.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var i,a=t("handle"),s=t("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){i=new PerformanceObserver(r);try{i.observe({entryTypes:["paint"]})}catch(f){}}if("addEventListener"in document){var u=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(t){document.addEventListener(t,o,!1)})}}},{}],22:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&Uint8Array&&(e=r.getRandomValues(new Uint8Array(31)));for(var o=[],i=0;i<16;i++)o.push(t().toString(16));return o.join("")}e.exports={generateUuid:r,generateCatId:o}},{}],23:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}e.exports={agent:o,version:i,match:r}},{}],24:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],25:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],26:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function n(n,r,o,i){if(!p.aborted||i){t&&t(n,r,o);for(var a=e(o),s=m(n),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[n]];return d&&d.push([x,n,r,a]),a}}function l(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var g={},y={},x={on:l,addEventListener:l,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:a,aborted:!1};return x}function i(){return new r}function a(){(u.api||u.feature)&&(p.aborted=!0,u=p.backlog={})}var s="nr@context",c=t("gos"),f=t(24),u={},d={},p=e.exports=o();p.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!E++){var t=b.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(y,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()+b.offset],null,"api");var n=l.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return R.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(24),u=t("ee"),d=t(23),p=window,l=p.document,h="addEventListener",m="attachEvent",v=p.XMLHttpRequest,w=v&&v.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:v,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var g=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1153.min.js"},x=v&&w&&w[h]&&!/CriOS/.test(navigator.userAgent),b=e.exports={offset:s,now:a,origin:g,features:{},xhrWrappable:x,userAgent:d};t(18),t(21),l[h]?(l[h]("DOMContentLoaded",i,!1),p[h]("load",r,!1)):(l[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,R=t(26)},{}],"wrap-function":[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(25),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof n?n(r,a):n||{}}catch(f){p([f,"",[r,a,o],s])}u(e+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],s),d}finally{u(e+"end",[r,a,c],s)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<e.length;c++)s=e[c],a=t[s],r(a)||(t[s]=n(a,f?s+o:o,i,s))}function u(n,r,o){if(!c||e){var i=c;c=!0;try{t.emit(n,r,o,e)}catch(a){p([a,n,r,o])}c=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){p([r])}for(var o in t)s.call(t,o)&&(e[o]=t[o]);return e}function p(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}]},{},["loader",2,16,5,3,4]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="">
+    <meta name="google-site-verification" content="K8rj4blGLnBAT92lx7hma8u94QQheB-yuHvkfzgd8qQ"/>
+    <meta name="format-detection" content="telephone=no">
+    <!--Get Visitor ID-->
+        <meta name="SC_Visitor_ID" content="e81b038f-61c5-4fea-958b-861b9ba14a7a"/>
+
+    
+    <title>Writing, Editing and Publishing | Open Universities Australia</title>
+<meta name="description" content="Study Writing, Editing and Publishing online with Curtin University. Enrol today!" />
+
+
+        <link rel="canonical" href="https://www.open.edu.au/subjects/curtin-university-writing-editing-and-publishing-cur-pwp211" />
+
+
+<meta property="og:url" content="https://www.open.edu.au/subjects/curtin-university-writing-editing-and-publishing-cur-pwp211"  />
+<meta property="og:title" content="Writing, Editing and Publishing"/>
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://www.open.edu.au/-/media/project/oua/logo/open-universities-australia.svg"/>
+<meta property="og:description" content="Study Writing, Editing and Publishing online with Curtin University. Enrol today!"/>
+
+
+    <link rel="icon" href="https://www.open.edu.au/dist/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.open.edu.au/dist/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.open.edu.au/dist/images/favicon-32x32.png">
+    <link rel="icon" sizes="192x192" href="https://www.open.edu.au/dist/images/android-icon-192x192">
+    <link rel="mask-icon" href="https://www.open.edu.au/dist/images/oua.svg" color="#3455a5 ">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://www.open.edu.au/dist/images/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://www.open.edu.au/dist/images/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://www.open.edu.au/dist/images/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.open.edu.au/dist/images/apple-touch-icon-180x180.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet"/>
+    <link href="https://cdn.open.edu.au/website-header/default.css" rel="stylesheet"/>
+
+    
+<script>if (this.customElements) try { customElements.define('built-in', document.createElement('p').constructor, { 'extends': 'p' }); if (typeof Cypress !== 'undefined') throw new Error() } catch (a) { document.write('<script defer src="https://unpkg.com/@ungap/custom-elements-builtin@0.2.7/min.js" crossorigin="anonymous" ><' + '/script>') } else document.write('<script defer src="https://unpkg.com/document-register-element@1.13.2/build/document-register-element.js" crossorigin="anonymous" ><' + '/script>');</script>
+
+<script>if (typeof HTMLElement === 'object') document.write('<script defer src="https://unpkg.com/custom-elements-es5-adapter@1.0.0/custom-elements-es5-adapter.js" crossorigin="anonymous"><' + '/script>')</script>
+
+<script defer src="https://polyfill.io/v3/polyfill.min.js?features=CustomEvent%2Cfetch%2CPromise%2CPromise.prototype.finally%2CNodeList.prototype.forEach%2CElement.prototype.classList%2CElement.prototype.remove%2CElement.prototype.matches%2CElement.prototype.closest%2CString.prototype.repeat%2CString.prototype.includes%2CObject.assign%2CArray.prototype.find%2CArray.prototype.findIndex"></script>
+    
+<script defer src="https://www.open.edu.au/dist/vendors/jquery-3.4.1.min.js"></script>
+
+        <script defer src="https://www.open.edu.au/dist/js/core.bundle.js?version=1417"></script>
+
+    
+    <link href="styles.css?version=1417" rel="stylesheet" />
+
+    
+        <!--Inject Tealium only in actual page in head section. Not in Experience Editor-->
+
+    <!-- Optimizely snippet -->
+<script defer src="https://cdn.optimizely.com/js/13018430509.js"></script>
+    <!--LivePerson-->
+<script type="text/javascript">
+window.lpTag = window.lpTag || {}, 'undefined' == typeof window.lpTag._tagCount ? (window.lpTag = { wl: lpTag.wl || null, scp: lpTag.scp || null, site: '60671217' || '', section: lpTag.section || '', tagletSection: lpTag.tagletSection || null, autoStart: lpTag.autoStart !== !1, ovr: lpTag.ovr || {}, _v: '1.10.0', _tagCount: 1, protocol: 'https:', events: { bind: function (t, e, i) { lpTag.defer(function () { lpTag.events.bind(t, e, i) }, 0) }, trigger: function (t, e, i) { lpTag.defer(function () { lpTag.events.trigger(t, e, i) }, 1) } }, defer: function (t, e) { 0 === e ? (this._defB = this._defB || [], this._defB.push(t)) : 1 === e ? (this._defT = this._defT || [], this._defT.push(t)) : (this._defL = this._defL || [], this._defL.push(t)) }, load: function (t, e, i) { var n = this; setTimeout(function () { n._load(t, e, i) }, 0) }, _load: function (t, e, i) { var n = t; t || (n = this.protocol + '//' + (this.ovr && this.ovr.domain ? this.ovr.domain : 'lptag.liveperson.net') + '/tag/tag.js?site=' + this.site); var o = document.createElement('script'); o.setAttribute('charset', e ? e : 'UTF-8'), i && o.setAttribute('id', i), o.setAttribute('src', n), document.getElementsByTagName('head').item(0).appendChild(o) }, init: function () { this._timing = this._timing || {}, this._timing.start = (new Date).getTime(); var t = this; window.attachEvent ? window.attachEvent('onload', function () { t._domReady('domReady') }) : (window.addEventListener('DOMContentLoaded', function () { t._domReady('contReady') }, !1), window.addEventListener('load', function () { t._domReady('domReady') }, !1)), 'undefined' === typeof window._lptStop && this.load() }, start: function () { this.autoStart = !0 }, _domReady: function (t) { this.isDom || (this.isDom = !0, this.events.trigger('LPT', 'DOM_READY', { t: t })), this._timing[t] = (new Date).getTime() }, vars: lpTag.vars || [], dbs: lpTag.dbs || [], ctn: lpTag.ctn || [], sdes: lpTag.sdes || [], hooks: lpTag.hooks || [], identities: lpTag.identities || [], ev: lpTag.ev || [] }, lpTag.init()) : window.lpTag._tagCount += 1;
+</script>
+<script defer src="https://www.open.edu.au/dist/js/liveperson-tracking.js"></script>
+<script type="text/javascript">
+    var livePersonStudentInfo = null;
+    livePersonTracking.pushPersonalInfo(livePersonStudentInfo);
+    livePersonTracking.pushCustomerInfo(livePersonStudentInfo);
+    livePersonTracking.pushCartInfo([{"Code":"GRF-BUS-DEG-2019","Name":"Bachelor of Business","StudyLevel":"Undergraduate","Price":null,"Year":"2019","StartDate":null}]);
+</script>
+    <!-- Feature flag-->
+    
+
+
+<script type="text/javascript">
+    window.featureFlagValues = {"display-save-icon-compare-view":true,"open-info-comparison-easy-apply":false,"show-qs-and-the-ranking-compare-view-degrees":false,"show-qs-and-the-ranking-compare-view-subjects":false};
+</script>
+
+    <script defer src="https://www.open.edu.au/dist/js/es6-promise.auto.min.js"></script>
+    <script defer src="https://www.open.edu.au/dist/js/ldclient.min.js"></script>
+    <script type='application/ld+json'>
+        {"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/www.open.edu.au\/","sameAs":["https:\/\/www.facebook.com\/OpenUnisAu","https:\/\/www.instagram.com\/openunisau\/","http:\/\/www.linkedin.com\/company\/56317","http:\/\/www.youtube.com\/user\/OpenUniversitiesAu","https:\/\/twitter.com\/OpenUnisAu"],"@id":"#organization","name":"Open Universities Australia","logo":"https:\/\/www.open.edu.au\/\/-\/\/media\/\/project\/\/oua\/\/logo\/\/open-universities-australia.svg"}
+    </script>
+
+<!-- <script>
+window['_fs_debug'] = false;
+window['_fs_host'] = 'fullstory.com';
+window['_fs_org'] = '354FR';
+window['_fs_namespace'] = 'FS';
+(function(m,n,e,t,l,o,g,y){
+   if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;}
+   g=m[e]=function(a,b){g.q?g.q.push([a,b]):g._api(a,b);};g.q=[];
+   o=n.createElement(t);o.defer=1;o.src='https://'+_fs_host+'/s/fs.js';
+   y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+   g.identify=function(i,v){g(l,{uid:i});if(v)g(l,v)};g.setUserVars=function(v){g(l,v)};
+   g.shutdown=function(){g("rec",!1)};g.restart=function(){g("rec",!0)};
+   g.consent=function(a){g("consent",!arguments.length||a)};
+   g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+   g.clearUserCookie=function(){};
+})(window,document,window['_fs_namespace'],'script','user');
+</script>  -->
+    
+    <input type="hidden" id="react-data-configuration-value" data-configuration='{"ldApiKey":"5b1093618246e3367188abbe","environment":"production"}'/>
+</head>
+
+<body class="" data-spy="scroll" data-target=".scrollspy" data-aest-timezone="{&quot;UtcOffset&quot;:&quot;10:00:00&quot;,&quot;UtcOffsetInMinutes&quot;:600.0}">
+<!--Inject Tealium only in actual page in body section. Not in Experience Editor-->
+<script type="text/javascript"> var utag_data = { 
+item_id: "{A8EC534A-ACF9-4D39-81F1-C48A0FCA3014}", 
+item_language: "en", 
+item_name: "curtin-university-writing-editing-and-publishing-cur-pwp211", 
+item_path: "/sitecore/content/alchemy/home/subjects/curtin-university-writing-editing-and-publishing-cur-pwp211", 
+item_template_id: "{0169CAAB-BCEE-41BB-88ED-F6AD1EC54AE7}", 
+item_template_name: "Subjects", 
+site_currency: ["USD","EUR"], 
+logged_in: "False", 
+session_ip_address: "203.22.64.66", 
+sc_visitor_id: "e81b038f-61c5-4fea-958b-861b9ba14a7a", 
+}; 
+</script> 
+<script type="text/javascript"> (function(a,b,c,d){ a='//tags.tiqcdn.com/utag/openaus/sitecore-main/prod/utag.js'; b=document; c='script'; d=b.createElement(c); d.src=a; d.type='text/java'+c; d.defer=true; a=b.getElementsByTagName(c)[0]; a.parentNode.insertBefore(d,a); })(); </script>
+    
+
+
+
+
+
+
+    <header class="">
+        <nav class="header">
+            <div class="header-container">
+                <div class="header-inner">
+                    
+                    
+
+<a class="header-logo " href="/">
+    <img src="https://www.open.edu.au/-/media/project/oua/logo/open-universities-australia.svg?la=en&amp;mh=50&amp;hash=F303CB7156330E0C92CFA65E2120F268870BFFE6" alt="Open Universities Australia" DisableWebEdit="False" />
+</a>
+
+<a class="header-menu-item header-phone header-menu-item-mobile phone-number-link AVANSERnumber" href="tel:136736">
+    <span class="sr">13 6736</span>
+</a>
+
+    <a is="favourite-link" class="header-menu-item header-favourites header-menu-item-mobile header-selection-icon-only" href="/online-courses?pagetype=favourites">
+        <span class="sr">Favourites</span>
+    </a>
+
+
+    <a is="cart-link" aria-label="Cart" id="mySelectionMobile" class="header-menu-item header-selection header-menu-item-mobile header-selection-icon-only" href="/enrol/selection">
+        <i class="header-selection-icon"></i>
+    </a>
+<button class="header-menu-toggle-button">
+    <span class="header-menu-toggle-button-icon"></span>
+</button>
+<nav class="header-navigation">
+    <a class="header-logo header-navigation-logo " href="/">
+        <img src="https://www.open.edu.au/-/media/project/oua/logo/open-universities-australia.svg?la=en&amp;mh=50&amp;hash=F303CB7156330E0C92CFA65E2120F268870BFFE6" alt="Open Universities Australia" DisableWebEdit="False" />
+    </a>
+    
+      <ul class="header-navigation-inner">
+      <li class="header-navigation-inner-item  header-navigation-inner-item-dropdown ">
+          <a href="/study-online" class="header-navigation-inner-item-link header-navigation-inner-item-dropdown-link">
+            <span class="header-navigation-inner-item-dropdown-link-inner">
+              Study online
+            </span>
+          </a>
+          <div class="header-navigation-inner-container">
+          <div class="header-navigation-inner-row">
+              <div class="header-navigation-inner-column">
+                <ul class="header-navigation-inner-menu">
+                  <li class="header-navigation-inner-menu-item">
+                    <a href="/study-online/study-areas">
+                      Study areas
+                    </a>
+                  </li>
+
+    <li class="header-navigation-inner-menu-item">
+      <a href="/study-online/study-areas/arts-humanities">
+        Arts &amp; humanities
+      </a>
+    </li>
+    <li class="header-navigation-inner-menu-item">
+      <a href="/study-online/study-areas/business">
+        Business
+      </a>
+    </li>
+    <li class="header-navigation-inner-menu-item">
+      <a href="/study-online/study-areas/education">
+        Education
+      </a>
+    </li>
+    <li class="header-navigation-inner-menu-item">
+      <a href="/study-online/study-areas/health">
+        Health
+      </a>
+    </li>
+    <li class="header-navigation-inner-menu-item">
+      <a href="/study-online/study-areas/information-technology">
+        Information technology
+      </a>
+    </li>
+    <li class="header-navigation-inner-menu-item">
+      <a href="/study-online/study-areas/law-justice">
+        Law &amp; justice
+      </a>
+    </li>
+    <li class="header-navigation-inner-menu-item">
+      <a href="/study-online/study-areas/science-engineering">
+        Science &amp; engineering
+      </a>
+    </li>
+                  </ul>
+                </div>
+              <div class="header-navigation-inner-column">
+                <ul class="header-navigation-inner-menu">
+                  <li class="header-navigation-inner-menu-item">
+                    <a href="/study-online/degrees-and-subjects">
+                      Degrees and subjects
+                    </a>
+                  </li>
+
+    <li class="header-navigation-inner-menu-item">
+      <a href="/study-online/degrees-and-subjects/undergraduate-degrees">
+        Undergraduate degrees
+      </a>
+    </li>
+    <li class="header-navigation-inner-menu-item">
+      <a href="/study-online/degrees-and-subjects/undergraduate-single-subjects">
+        Undergraduate subjects
+      </a>
+    </li>
+    <li class="header-navigation-inner-menu-item">
+      <a href="/study-online/degrees-and-subjects/postgraduate-courses">
+        Postgraduate courses
+      </a>
+    </li>
+    <li class="header-navigation-inner-menu-item">
+      <a href="/study-online/degrees-and-subjects/postgraduate-single-subjects">
+        Postgraduate single subjects
+      </a>
+    </li>
+                  </ul>
+                </div>
+              <div class="header-navigation-inner-column">
+                <ul class="header-navigation-inner-menu">
+                  <li class="header-navigation-inner-menu-item">
+                    <a href="/study-online/preparatory-subjects">
+                      Preparatory subjects
+                    </a>
+                  </li>
+
+    <li class="header-navigation-inner-menu-item">
+      <a href="/study-online/preparatory-subjects/enabling-courses">
+        Enabling courses
+      </a>
+    </li>
+    <li class="header-navigation-inner-menu-item">
+      <a href="/study-online/preparatory-subjects/english-language-test-preparation">
+        English language test preparation
+      </a>
+    </li>
+    <li class="header-navigation-inner-menu-item">
+      <a href="/study-online/preparatory-subjects/oua-pathways">
+        OUA Pathways
+      </a>
+    </li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+      </li>
+      <li class="header-navigation-inner-item  ">
+            <a class="header-navigation-inner-item-link" href="/why-us">
+              Why us?
+            </a>
+      </li>
+      <li class="header-navigation-inner-item  header-navigation-inner-item-dropdown ">
+          <a href="/your-studies" class="header-navigation-inner-item-link header-navigation-inner-item-dropdown-link">
+            <span class="header-navigation-inner-item-dropdown-link-inner">
+              Your studies
+            </span>
+          </a>
+          <div class="header-navigation-inner-container">
+          <div class="header-navigation-inner-row">
+              <div class="header-navigation-inner-column">
+                <ul class="header-navigation-inner-menu">
+                  <li class="header-navigation-inner-menu-item">
+                    <a href="/your-studies/getting-started">
+                      Getting started
+                    </a>
+                  </li>
+
+    <li class="header-navigation-inner-menu-item">
+      <a href="/your-studies/getting-started/key-dates">
+        Key dates
+      </a>
+    </li>
+    <li class="header-navigation-inner-menu-item">
+      <a href="/your-studies/getting-started/how-to-enrol">
+        How to enrol
+      </a>
+    </li>
+    <li class="header-navigation-inner-menu-item">
+      <a href="/your-studies/getting-started/applying-for-credit">
+        Applying for credit
+      </a>
+    </li>
+    <li class="header-navigation-inner-menu-item">
+      <a href="/your-studies/getting-started/study-planning">
+        Study planning
+      </a>
+    </li>
+    <li class="header-navigation-inner-menu-item">
+      <a href="/your-studies/getting-started/textbooks-study-materials">
+        Textbooks &amp; study materials
+      </a>
+    </li>
+    <li class="header-navigation-inner-menu-item">
+      <a href="/your-studies/getting-started/computer-requirements">
+        Computer requirements
+      </a>
+    </li>
+    <li class="header-navigation-inner-menu-item">
+      <a href="/your-studies/getting-started/exams">
+        Exams
+      </a>
+    </li>
+    <li class="header-navigation-inner-menu-item">
+      <a href="/your-studies/getting-started/international-students">
+        International students
+      </a>
+    </li>
+                  </ul>
+                </div>
+              <div class="header-navigation-inner-column">
+                <ul class="header-navigation-inner-menu">
+                  <li class="header-navigation-inner-menu-item">
+                    <a href="/your-studies/financial-options">
+                      Financial options
+                    </a>
+                  </li>
+
+    <li class="header-navigation-inner-menu-item">
+      <a href="/your-studies/financial-options/student-loans">
+        Student loans
+      </a>
+    </li>
+    <li class="header-navigation-inner-menu-item">
+      <a href="/your-studies/financial-options/study-allowances">
+        Study allowances
+      </a>
+    </li>
+    <li class="header-navigation-inner-menu-item">
+      <a href="/your-studies/financial-options/fees">
+        Fees
+      </a>
+    </li>
+                  </ul>
+                </div>
+              <div class="header-navigation-inner-column">
+                <ul class="header-navigation-inner-menu">
+                  <li class="header-navigation-inner-menu-item">
+                    <a href="/your-studies/support">
+                      Support
+                    </a>
+                  </li>
+
+    <li class="header-navigation-inner-menu-item">
+      <a href="/your-studies/support/getting-advice">
+        Getting advice
+      </a>
+    </li>
+    <li class="header-navigation-inner-menu-item">
+      <a href="/your-studies/support/study-preparation">
+        Study preparation
+      </a>
+    </li>
+    <li class="header-navigation-inner-menu-item">
+      <a href="/your-studies/support/disability-support">
+        Disability support
+      </a>
+    </li>
+    <li class="header-navigation-inner-menu-item">
+      <a href="/your-studies/support/smarthinking">
+        Smarthinking
+      </a>
+    </li>
+    <li class="header-navigation-inner-menu-item">
+      <a href="/your-studies/support/special-circumstances">
+        Special Circumstances
+      </a>
+    </li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+      </li>
+  </ul>
+
+
+    
+    
+
+
+<div class="header-menu">
+        <a class="header-menu-item header-phone header-menu-item-desktop phone-number-link AVANSERnumber" href="tel:13 6736">
+          13 6736
+        </a>
+</div>
+
+
+    <div class="header-menu">
+        <a is="favourite-link" class="header-menu-item header-menu-item-button header-favourites header-menu-item-desktop header-selection-icon-only" href="/online-courses?pagetype=favourites">
+            <span class="sr">Favourites</span>
+        </a>
+    </div>
+
+        <div class="header-menu">
+            <a is="cart-link" aria-label="Cart" class="header-menu-item header-menu-item-button header-selection header-menu-item-desktop header-selection-icon-only" id="mySelection" href="/enrol/selection" data-selection="True">
+                <i class="header-selection-icon"></i>
+            </a>
+        </div>
+    <div class="header-menu">
+        <a class="header-menu-item header-menu-item-button" id="hideLogin" href="/account/student/sign-in">
+            Sign in
+        </a>
+    </div>
+
+</nav>
+                    
+                    
+                </div>
+            </div>
+        </nav>
+
+        <div class="search-bar">
+    <div class="container">
+        
+
+
+<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+                <li class="breadcrumb-list-item " itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+
+                    <a class="breadcrumb-link-item " itemtype="http://schema.org/WebPage" itemprop="item" href="https://www.open.edu.au/"><span itemprop="name">OUA</span></a>
+                    <meta itemprop="position" content="0"/>
+                </li>
+                <li class="breadcrumb-list-item " itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+
+                    <a class="breadcrumb-link-item active" itemtype="http://schema.org/WebPage" itemprop="item" href="https://www.open.edu.au/online-courses/subjects"><span itemprop="name">Subjects</span></a>
+                    <meta itemprop="position" content="1"/>
+
+                </li>
+</ul>
+
+        <div class="input-group-container closed">
+            <div class="search-bar-wrapper">
+                <button class="btn-icon btn-back search-back-arrow" data-dismiss="modal">Go back</button>
+                <div class="input-group">
+                    <div class="position-relative">
+                        <label for="searchTxt" class="sr-only">Search for degrees and subjects</label>
+                        <input class="search-query form-control form-control-simple ui-autocomplete-input" id="searchTxt" type="text" placeholder="Search degrees or subjects">
+                        <button class="btn-delete" id="clear-input">Clear text</button>
+                        <button aria-label="search" class="btn-search" type="button" id="searchBtn">Search</button>
+                    </div>
+                </div>
+             </div>
+         </div>
+     </div>
+</div>
+
+
+    </header>
+
+    <main>
+        
+        
+<div class="unit-details">
+    <div id="unit-notifications">
+                <div class="alert alert-warning full-width">
+        <div class="container">
+            <p><strong>Warning!</strong> This unit contains mature content and may not be suitable for some students. Any student under the age of 16 who would like to enrol in this unit must first complete a Parental Consent Form.</p>
+        </div>
+    </div>
+
+        </div>
+        <div class="banner">
+            <section class="padding-y-0">
+                <div class="container container-course-details">
+                    <div class="row">
+                        <!-- padding top for this col and price panel col to have sync feeling on top spacing.
+                            Padding bottom to have space between this and course information col -->
+                        <div class="col-md-7 banner-inverted padding-t-2rem padding-b-3rem">
+                            <div class="banner-course-details-background pe-none"></div>
+                            <div class="banner-content position-relative">
+                                
+            <script type="text/javascript">
+                livePersonTracking.pushProdViewInfo(
+                    {"Title":"Writing, Editing and Publishing","StudyLevel":"Undergraduate","Code":"CUR-PWP211-2019"});
+            </script>
+        <p class="study-level">
+            Undergraduate
+            <span class="vertical-divider"></span>
+            CUR-PWP211-2019
+        </p>
+        <h1 data-purpose="lead-title">Writing, Editing and Publishing</h1>
+<p>Put yourself in the role of the editor and find out where they sit in the publishing process. Polish up your proofreading and copyediting skills. Look at editing symbols. Consider layout and design. Measure print publishing against its online cousin.</p>
+
+                            </div>
+                        </div>
+                        <!-- .pull-right is necessary for proper grid like layout
+                            pull-right is applied in .price-container-panel
+                            _________
+                            |col - 7| | col -5 |
+                            --------- |        |
+                            |col - 7| |________|
+                            padding top to sync with previous column
+                        -->
+                        <div class="col-md-5 price-container-panel price-container-panel-grid-layout padding-t-2rem">
+                            <div class="price-container-panel-background pe-none"></div>
+                            
+    <div class="right-col">
+        <div class="right-col-inner">
+            <div class="right-col-inner-content ">
+
+                <div>
+                    <p class="h4"></p>
+                </div>
+            </div>
+            <div class="right-col-inner-content">
+                <div class="sticky-footer-panel-mobile ">
+                        <div class="alert alert-info">
+                            <p class="text-center">
+                                There are no available classes.
+                                <a href="/online-courses">Find another subject.</a>
+                            </p>
+                        </div>
+                        <button is="save-button" type="button" data-ouacode="CUR-PWP211" data-itemtype="Subject" data-active="False" data-save-text="SAVED" data-unsave-text="SAVE" data-saved-classes="btn-secondary" data-unsaved-classes="btn-default"class="btn-save  btn btn-block is-with-text btn-save-course-page">
+        <i class="oua-svg-icon"></i>
+    </button>
+
+                </div>
+                
+    <div class="key-features key-features-unit">
+            <div class="media component-key-feature duration">
+                <p>Duration<button class="btn-tooltip-info" type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="How many weeks from classes start through to final assessment."></button></p>
+                <div class="media-left"></div>
+                <div class="media-body">
+                    <p class="h5 media-heading">
+                        <span>13</span> weeks
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="media component-key-feature study-online">
+                <p>
+                    Study method<button class="btn-tooltip-info" type="button" data-toggle="tooltip" data-placement="top" data-original-title="All of our degrees and subjects are studied with your university online. Some subjects may have a requirement to attend an exam or participate in class work (available at our venue nearest you)."></button>
+                </p>
+                <div class="media-left"></div>
+                <div class="media-body">
+                        <p class="h5 media-heading">
+                            <span>100%</span> online
+                        </p>
+
+                </div>
+            </div>
+
+
+            <div class="media component-key-feature loans">
+                <p>Available loans<button class="btn-tooltip-info" type="button" data-toggle="tooltip" data-placement="top" data-original-title="A range of financial options and government loans are available pending eligibility."></button></p>
+                <div class="media-left"></div>
+                <div class="media-body">
+                    <div class="h5 media-heading">
+                        <ul class="list-unstyled">
+                                <li>FEE-HELP</li>
+                                <li>HECS-HELP</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="media component-key-feature exams">
+                <p>
+                    Assessments<button class="btn-tooltip-info" type="button" data-toggle="tooltip" data-placement="top" data-original-title="The majority of your assessments will be 100% online. Some subjects may have a requirement to attend a supervised exam (available at our venue nearest you)."></button>
+                </p>
+                <div class="media-left"></div>
+                <div class="media-body">
+
+                    <p class="h5 media-heading">
+                            <span>100%</span> online                    </p>
+                </div>
+            </div>
+
+
+
+            <div class="media component-key-feature prior-study">
+                <p>Prior study<button class="btn-tooltip-info" type="button" data-toggle="tooltip" data-placement="top" data-original-title="Some subjects may have what are called prerequisite subjects in which case you will need to complete the prerequisites before you start."></button></p>
+                <div class="media-left"></div>
+                <div class="media-body">
+                        <p class="h5 media-heading">Not required</p>
+                </div>
+            </div>
+
+            <div class="media component-key-feature study-terms">
+                <p>Study terms<button class="btn-tooltip-info" type="button" data-toggle="tooltip" data-placement="top" data-original-title="With multiple study terms throughout the year you have flexibility of what you want to study and when."></button></p>
+                <div class="media-left"></div>
+                <div class="media-body">
+
+                    <ul class="list-terms">
+                                <li>
+                                    02 Mar 2020
+                                </li>
+                                <li>
+                                    31 Aug 2020
+                                </li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+
+
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="hdn_contextItemId" name="hdn_contextItemId" value="{A8EC534A-ACF9-4D39-81F1-C48A0FCA3014}" />
+        <input type="hidden" id="unitDetail" name="hdn_contextItemId" data-subSource="" data-subjectCode="Writing, Editing and Publishing" />
+
+                            
+
+    <div class="card provider-overview">
+        <div class="card-content">
+            <div class="panel-heading">
+                <a class="panel-title-link" role="button" data-toggle="collapse" data-parent="#a1" href="#collapseProvider1" aria-expanded="false" aria-controls="collapseProvider1">
+                    <img class="provider-logo" src="https://www.open.edu.au/-/media/images/providers/curtn.svg" alt="Curtin University" title="Curtin University">
+                </a>
+            </div>
+            <div class="panel-collapse collapse" id="collapseProvider1">
+                <div class="panel-body">
+                    <p>Start your career with Curtin&rsquo;s globally recognised courses and extensive industry connections. Through OUA, our online courses offer an interactive and collaborative learning experience that gets you the same degree as if you studied on campus. Curtin is a global university with a vibrant culture of innovation and collaboration and is ranked in the top one per cent of universities worldwide.</p>
+                </div>
+
+                         <div class="media component-key-feature uni-ranking">
+                             <p>University ranking<button class="btn-tooltip-info" type="button" data-toggle="tooltip" data-placement="top" data-original-title="This is the ranking within Australia based on the QS World University Rankings 2019."></button></p>
+                             <div class="media-left"></div>
+                             <div class="media-body">
+                                 <p class="h5 media-heading provider-rating">
+                                     <span>15</span>
+                                 </p>
+                             </div>
+                         </div>
+
+                <input type="hidden" id="hdn_contextItemId_course" name="hdn_contextItemId" value="Sitecore.Data.Items.Item?.ID?.ToString()" />
+            </div>
+        </div>
+    </div>
+
+    <div data-course-code="CUR-PWP211" id="nextstep-student-voices" page-type="subject"></div>
+    <script src="https://cdn.open.edu.au/nextstep-student-voices/default.js" defer></script>
+                        </div>
+                        <div class="col-md-7">
+                            
+                            
+    <section>
+
+        <div class="version-tab">
+            <div>
+        <ul class="nav nav-tabs" id="tabversion">
+                    <li class="active" id="2019">
+                        <a class="nav-tabs-link" href="/subjects/curtin-university-writing-editing-and-publishing-cur-pwp211?year=2019" rel="nofollow">2019</a>
+                    </li>
+                    <li class="" id="2020">
+                        <a class="nav-tabs-link" href="/subjects/curtin-university-writing-editing-and-publishing-cur-pwp211?year=2020" rel="nofollow">2020</a>
+                    </li>
+        </ul>
+    </div>
+
+        </div>
+    <h3 class="section-title">Subject details</h3>
+    <div class="panel-group component-accordion">
+
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading_relatedLearn">
+                <div class="panel-title">
+                    <a class="panel-title-link collapsed" role="button" data-toggle="collapse" href="#collapse_relatedLearn" aria-expanded="true" aria-controls="collapse_relatedLearn">What you'll learn</a>
+                </div>
+            </div>
+            <div class="panel-collapse collapse in" id="collapse_relatedLearn" role="tabpanel" aria-labelledby="heading_relatedLearn">
+                <div class="panel-body"><p>At the completion of this subject students will be able to:</p>
+<ol>
+  <li>explain and reflect on the roles and responsibilities of editors, and the relationships between editors, writers and publishers</li>
+  <li>learn and practice the language skills needed to undertake author communication, manuscript appraisal, proofreading and copyediting tasks</li>
+  <li>apply accepted page and screen based editing practices, editing symbols, and publishing industry terminology to proofreading and copyediting tasks.</li>
+</ol></div>
+            </div>
+        </div>
+
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading_whatWillYouLearn">
+                <div class="panel-title">
+                    <a class="panel-title-link collapsed" role="button" data-toggle="collapse" href="#collapse_whatWillYouLearn" aria-expanded="false" aria-controls="collapse_whatWillYouLearn">Topics covered</a>
+                </div>
+            </div>
+            <div class="panel-collapse collapse" id="collapse_whatWillYouLearn" role="tabpanel" aria-labelledby="heading_whatWillYouLearn">
+                <div class="panel-body">
+                    <ul class="list-unstyled no-padding">
+                            <li>
+                                <ul class="list-styled">
+                                        <li>Introduction to editing and publishing</li>
+                                        <li>Copyediting resources and how-to</li>
+                                        <li>Sentence punctuation</li>
+                                        <li>Proofreading resources and how-to</li>
+                                        <li>Word punctuation and spelling</li>
+                                        <li>Grammar 1</li>
+                                        <li>Grammar 2</li>
+                                        <li>Capitalisation, numbers and referencing</li>
+                                        <li>Author-editor relations and developmental editing resources</li>
+                                        <li>Developmental editing how-to</li>
+                                        <li>Themes, plot, structure and pacing</li>
+                                        <li>Careers in editing and publishing</li>
+                                </ul>
+                            </li>
+                                                    <li>
+                                <p class="h4">Study resources</p>
+                                <ul class="list-unstyled no-padding">
+                                        <li>
+                                            <p class="h5">Instructional methods</p>
+                                            <ul class="list-styled">
+                                                    <li>Chat Rooms</li>
+                                                    <li>Discussion forum/Discussion Board</li>
+                                                    <li>Glossary</li>
+                                                    <li>Online Quizzes/Tests</li>
+                                                    <li>Online assignment submission</li>
+                                                    <li>Podcasting/Lecture capture</li>
+                                                    <li>Standard Media</li>
+                                                    <li>Web links</li>
+                                                    <li>Wikis</li>
+                                            </ul>
+                                        </li>
+                                                                                                                                            </ul>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading_eligibility">
+            <div class="panel-title">
+                <a class="panel-title-link collapsed" role="button" data-toggle="collapse" href="#collapse_eligibility" aria-expanded="false" aria-controls="collapse_eligibility">Entry requirements</a>
+            </div>
+        </div>
+
+        <div class="panel-collapse collapse" id="collapse_eligibility" role="tabpanel" aria-labelledby="heading_eligibility">
+            <div class="panel-body">
+                        <h4>Others</h4>
+                        <p>Note: Level 2 subjects normally assume an introductory level of prior knowledge in this area, e.g. from studying related Level 1 subjects or other relevant experience.</p>
+                                        <h4>Special requirements</h4>
+                        <p>No special requirements</p>
+            </div>
+        </div>
+        </div>
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab">
+                <div class="panel-title">
+                    <a class="panel-title-link collapsed" role="button" data-toggle="collapse" href="#collapseDescription" aria-expanded="false" aria-controls="collapseDescription">Description</a>
+                </div>
+            </div>
+            <div class="panel-collapse collapse" id="collapseDescription" role="tabpanel">
+                <div class="panel-body"><p>The subject provides a practical introduction to editing. Students learn about the editor's role and profession, the publishing process and editorial project management; and they learn and practise the skills needed for professional proofreading and copyediting, including language skills, on the page and the screen. Student learning is graduated through a series of successively higher-level editing tasks, which students practise thoroughly in workshops, and are assessed in before moving to a higher level.</p>
+<p><u><strong>Please Note</strong>:</u>&#160; If it’s your first time studying a Curtin University subject you’ll need to complete their compulsory <strong>‘Academic Integrity Program’</strong>. It only takes two hours to complete online, and provides you with vital information about studying with Curtin University. The Academic Integrity Program is compulsory, so if it’s not completed your subject grades will be withheld.</p>
+<p>Find out more about the <a href="https://academicintegrity.curtin.edu.au/"><strong>Academic Integrity</strong> module</a>.</p></div>
+            </div>
+        </div>
+
+            <div class="panel panel-default" data-unit-code="CUR-PWP211" id="subject-student-feedback"></div>
+            <script defer src="https://cdn.open.edu.au\subject-student-feedback\default.js"></script>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading_assessments">
+                <div class="panel-title">
+                    <a class="panel-title-link collapsed" role="button" data-toggle="collapse" href="#collapse_assessments" aria-expanded="false" aria-controls="collapse_assessments">Assessments</a>
+                </div>
+            </div>
+
+            <div class="panel-collapse collapse" id="collapse_assessments" role="tabpanel" aria-labelledby="heading_assessments">
+                <div class="panel-body">
+                    <p></p>
+                    <ul class="list-styled">
+                            <li>Proofreading (30%)</li>
+                            <li>Copyediting (30%)</li>
+                            <li>Developmental Editing (40%)</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading_textbooks">
+            <div class="panel-title">
+                <a class="panel-title-link collapsed" role="button" data-toggle="collapse" href="#collapse_textbooks" aria-expanded="false" aria-controls="collapse_textbooks">Textbooks</a>
+            </div>
+        </div>
+﻿
+
+<div class="panel-collapse collapse" id="collapse_textbooks" role="tabpanel" aria-labelledby="heading_textbooks">
+            <div class="panel-body">
+
+                    <label><h5 style="font-weight:normal;">Current study term <span style="font-size: 10pt;font-weight: normal">(01 Mar 20 to  31 May 20) </span></h5></label>
+                        <div class="alert alert-info">
+                            <p>Textbook information is pending.</p>
+                        </div>
+            </div>
+            <div class="panel-body">
+
+                    <label><h5 style="font-weight:normal;">Next study term <span style="font-size: 10pt;font-weight: normal">(30 Aug 20 to  29 Nov 20) </span></h5></label>
+                        <div class="alert alert-info">
+                            <p>Textbook information is pending.</p>
+                        </div>
+            </div>
+</div>
+        </div>
+
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg"><symbol id="bookIcon" x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50" style="fill: #3455a5;"><g id="surface1"><path style="" d="M 12 2 C 8.699219 2 6 4.699219 6 8 L 6 42.417969 C 6 45.59375 8.832031 48 12 48 L 44 48 L 44 46 L 12 46 C 9.839844 46 8 44.378906 8 42.417969 C 8 40.457031 9.800781 39 12 39 L 44 39 L 44 2 Z M 12 4 L 42 4 L 42 37 L 12 37 C 10.507813 37 9.09375 37.539063 8 38.417969 L 8 8 C 8 5.78125 9.78125 4 12 4 Z M 15 9 C 13.90625 9 13 9.90625 13 11 L 13 15 C 13 16.09375 13.90625 17 15 17 L 36 17 C 37.09375 17 38 16.09375 38 15 L 38 11 C 38 9.90625 37.09375 9 36 9 Z M 15 11 L 36 11 L 36 15 L 15 15 Z "></path></g></symbol></svg>
+    </section>
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="container">
+            
+
+    <section>
+        <h3 class="section-title">Related degrees</h3>
+        <div class="row">
+
+                <div class="col-md-3">
+                    <div class="card card-course">
+                        <a href="/degrees/bachelor-of-arts-professional-writing-and-publishing-curtin-university-cur-pwp-deg?year=2019" rel="nofollow">
+                            <div class="card-content">
+                                <img class="provider-logo" src="https://www.open.edu.au/-/media/images/providers/curtn.svg" alt="">
+                                <p class="level study-level">
+                                    <span>undergraduate</span>
+                                    <span class="vertical-divider"></span>
+                                    <span>CUR-PWP-DEG-2019</span>
+                                </p>
+                                <p class="card-title">Bachelor of Arts  Professional Writing and Publishing </p>
+                            </div>
+                        </a>
+                                            </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card card-course">
+                        <a href="/degrees/bachelor-of-arts-internet-communications-and-professional-writing-and-publishing-curtin-university-cur-icp-deg?year=2019" rel="nofollow">
+                            <div class="card-content">
+                                <img class="provider-logo" src="https://www.open.edu.au/-/media/images/providers/curtn.svg" alt="">
+                                <p class="level study-level">
+                                    <span>undergraduate</span>
+                                    <span class="vertical-divider"></span>
+                                    <span>CUR-ICP-DEG-2019</span>
+                                </p>
+                                <p class="card-title">Bachelor of Arts  Internet Communications and Professional Writing and Publishing </p>
+                            </div>
+                        </a>
+                                            </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card card-course">
+                        <a href="/degrees/bachelor-of-arts-professional-writing-and-publishing-and-visual-culture-curtin-university-cur-pvc-deg?year=2019" rel="nofollow">
+                            <div class="card-content">
+                                <img class="provider-logo" src="https://www.open.edu.au/-/media/images/providers/curtn.svg" alt="">
+                                <p class="level study-level">
+                                    <span>undergraduate</span>
+                                    <span class="vertical-divider"></span>
+                                    <span>CUR-PVC-DEG-2019</span>
+                                </p>
+                                <p class="card-title">Bachelor of Arts  Professional Writing and Publishing and Visual Culture </p>
+                            </div>
+                        </a>
+                                            </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card card-course">
+                        <a href="/degrees/bachelor-of-arts-digital-design-and-professional-writing-and-publishing-curtin-university-cur-ddp-deg?year=2019" rel="nofollow">
+                            <div class="card-content">
+                                <img class="provider-logo" src="https://www.open.edu.au/-/media/images/providers/curtn.svg" alt="">
+                                <p class="level study-level">
+                                    <span>undergraduate</span>
+                                    <span class="vertical-divider"></span>
+                                    <span>CUR-DDP-DEG-2019</span>
+                                </p>
+                                <p class="card-title">Bachelor of Arts  Digital Design and Professional Writing and Publishing </p>
+                            </div>
+                        </a>
+                                            </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card card-course">
+                        <a href="/degrees/bachelor-of-arts-fine-art-and-professional-writing-and-publishing-curtin-university-cur-fap-deg?year=2019" rel="nofollow">
+                            <div class="card-content">
+                                <img class="provider-logo" src="https://www.open.edu.au/-/media/images/providers/curtn.svg" alt="">
+                                <p class="level study-level">
+                                    <span>undergraduate</span>
+                                    <span class="vertical-divider"></span>
+                                    <span>CUR-FAP-DEG-2019</span>
+                                </p>
+                                <p class="card-title">Bachelor of Arts  Fine Art and Professional Writing and Publishing </p>
+                            </div>
+                        </a>
+                            <div class="card-footer">
+                                                                    <!--Available Majors -->
+                                    <div class="card-action">
+                                        <div class="activator available-majors btn-expand"><span>2 </span>available majors </div>
+                                    </div>
+                            </div>
+                                                    <div class="card-reveal">
+                                <div class="card-title">
+                                    <i class="btn btn-icon btn-close pull-right">close</i>
+                                    <ul class="list-styled">
+                                                <li>Level 2 Major - Fine Art - Painting</li>
+                                                <li>Level 2 Major - Fine Art - Sculpture</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card card-course">
+                        <a href="/degrees/bachelor-of-arts-librarianship-and-corporate-information-management-curtin-university-cur-lib-deg?year=2019" rel="nofollow">
+                            <div class="card-content">
+                                <img class="provider-logo" src="https://www.open.edu.au/-/media/images/providers/curtn.svg" alt="">
+                                <p class="level study-level">
+                                    <span>undergraduate</span>
+                                    <span class="vertical-divider"></span>
+                                    <span>CUR-LIB-DEG-2019</span>
+                                </p>
+                                <p class="card-title">Bachelor of Arts  Librarianship and Corporate Information Management </p>
+                            </div>
+                        </a>
+                                            </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card card-course">
+                        <a href="/degrees/bachelor-of-arts-internet-communications-curtin-university-cur-net-deg?year=2019" rel="nofollow">
+                            <div class="card-content">
+                                <img class="provider-logo" src="https://www.open.edu.au/-/media/images/providers/curtn.svg" alt="">
+                                <p class="level study-level">
+                                    <span>undergraduate</span>
+                                    <span class="vertical-divider"></span>
+                                    <span>CUR-NET-DEG-2019</span>
+                                </p>
+                                <p class="card-title">Bachelor of Arts  Internet Communications </p>
+                            </div>
+                        </a>
+                                            </div>
+                </div>
+        </div>
+    </section>
+
+        </div>
+</div>
+
+
+
+
+
+<div class="modal fade ShowOnPageload ShowOnDownload " id="leadCaptureModal" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <button class="btn-icon btn-close close" data-dismiss="modal" title="close">close</button>
+            <form class="lead-form">
+                <div class="modal-header">
+                        <h2 id="formTitle">Tell us a little about yourself</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger error-container"></div>
+                    <div class="input-field">
+                        <label for="lcfFirstName">First name</label>
+                        <input class="validate form-control lcfFirstName" id="lcfFirstName" type="text" name="first_name" autofocus>
+                    </div>
+                    <div class="input-field leadGeneration  hidden" data-url="">
+                        <label for="lcfLastName">Last name</label>
+                        <input class="validate form-control lcfLastName" id="lcfLastName" type="text" name="last_name">
+                    </div>
+                    <div class="input-field">
+                        <label for="maskedInput">Mobile number</label>
+                        <input class="form-control input-field-phone-number validate maskedInput" name="mobile-number" id="maskedInput" type="tel">
+                    </div>
+                    <div class="input-field">
+                        <label for="lcfEmail">Email</label>
+                        <input class="validate form-control lcfEmail" id="lcfEmail" type="email" name="email">
+                    </div>
+                </div>
+                <div class="modal-footer" data-pdf="https://www.open.edu.au/degreeguide/CUR-PWP211-2020">
+                    <button class="btn btn-primary btn-leadCapture-submit preloader-trigger" id="btn-modalMoreInfo-accept" data-applyDetails="">OK</button>
+                    <button class="btn-link ShowButtonOnPageload ShowButtonOnDownload" onclick=optOutEvent() data-dismiss="modal" data-eventid="" id="btn-modalMoreInfo-reject">No thanks</button>
+                </div>
+            </form>
+        </div>
+    </div>
+        <input type="hidden" class="leadSubsource" name="hdn_contextItemId" data-subSource="Lead Capture" data-degreeCode="" data-subjectCode="Writing, Editing and Publishing" />
+</div>
+
+
+
+
+    </main>
+
+<footer>
+
+        <div class="page-footer">
+            <div class="container">
+                <div class="row">
+  <div class="col-md-3">
+    
+
+<div>
+        <img class="footer-brand" src="https://www.open.edu.au/-/media/images/providers/open-universities-australia-white.svg" alt="Open Universities Australia">
+
+    <div class="footer-social-links">
+
+            <a class="btn-social oua-icon-facebook" target="_blank" rel="noopener" href="https://www.facebook.com/OpenUnisAu">
+               Facebook
+            </a>
+            <a class="btn-social oua-icon-twitter" target="_blank" rel="noopener" href="https://twitter.com/OpenUnisAU">
+               Twitter
+            </a>
+            <a class="btn-social oua-icon-instagram" target="_blank" rel="noopener" href="https://www.instagram.com/openunisau/">
+               Instagram
+            </a>
+            <a class="btn-social oua-icon-linkedin" target="_blank" rel="noopener" href="http://www.linkedin.com/company/56317?trk=tyah&amp;trkInfo=tarId%3A1400480749257%2Ctas%3Aopen%20universities%2Cidx%3A1-1-1">
+               LinkedIn
+            </a>
+            <a class="btn-social oua-icon-youtube" target="_blank" rel="noopener" href="http://www.youtube.com/user/OpenUniversitiesAu">
+               YouTube
+            </a>
+    </div>
+</div>
+  </div>
+  <div class="col-md-9">
+    
+
+
+        <ul class="list-unstyled">
+                <li class="footer-list-item">
+                    <a class="footer-link-item" href="/contact-us">Contact us</a>
+                </li>
+                <li class="footer-list-item">
+                    <a class="footer-link-item" href="/about-us">About us</a>
+                </li>
+                <li class="footer-list-item">
+                    <a class="footer-link-item" href="https://www.open.edu.au/student-blog/">OUA Blog</a>
+                </li>
+                <li class="footer-list-item">
+                    <a class="footer-link-item" href="/about-us/media-centre">Media centre</a>
+                </li>
+                <li class="footer-list-item">
+                    <a class="footer-link-item" href="/about-us/partnerships">Partnerships</a>
+                </li>
+                <li class="footer-list-item">
+                    <a class="footer-link-item" href="/universities">Universities</a>
+                </li>
+                <li class="footer-list-item">
+                    <a class="footer-link-item" href="/your-career">Your career</a>
+                </li>
+                <li class="footer-list-item">
+                    <a class="footer-link-item" href="/faq-and-glossary">FAQ and glossary</a>
+                </li>
+                <li class="footer-list-item">
+                    <a class="footer-link-item" href="/about-us/work-with-us">Work with us</a>
+                </li>
+                <li class="footer-list-item">
+                    <a class="footer-link-item" href="/study-online/courses">Courses</a>
+                </li>
+                <li class="footer-list-item">
+                    <a class="footer-link-item" href="/study-online/courses/mba-online">MBA online</a>
+                </li>
+                <li class="footer-list-item">
+                    <a class="footer-link-item" href="/study-online/interest-areas">Browse by interest area</a>
+                </li>
+            
+        </ul>
+
+
+  </div>
+</div>
+
+
+            </div>
+        </div>
+    
+© Open Universities Australia
+<iframe src="https://asia.creativecdn.coM/tags?id=pr_POZKAPOUujdHhJexqfYo_offer_CUR-PWP211" sandbox="" width="1" height="1" scrolling="no" fraMeBorder="0" ></iframe>
+<div class="footer-copyright">
+    <div class="container">
+        <p class="footer-copyright-legal">Open Universites Australia is a not-for-profit organisation. &#169; Open Universities Australia 2019. All rights reserved.</p>
+        <div class="footer-copyright-links">
+            <ul class="list-inline">
+                <li class="footer-list-item">
+                    <a class="footer-link-item" href="/legal/cookies/">Cookies</a>
+                </li>
+                <li class="footer-list-item">
+                    <a class="footer-link-item" href="/legal/copyright">Copyright</a>
+                </li>
+                <li class="footer-list-item">
+                    <a class="footer-link-item" href="/legal/disclaimer">Disclaimer</a>
+                </li>
+                <li class="footer-list-item">
+                    <a class="footer-link-item" href="/legal/privacy">Privacy</a>
+                </li>
+                <li class="footer-list-item">
+                    <a class="footer-link-item" href="/legal/terms-of-use">Terms of use</a>
+                </li>
+                <li class="footer-list-item">
+                    <a class="footer-link-item" href="/sitemap">Site map</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+</footer>
+
+    <script defer src="https://www.open.edu.au/dist/js/scripts.js?version=1417"></script>
+
+    <script type="text/javascript">
+        var tag = document.createElement('script');
+        tag.id = 'iframe-demo';
+        tag.src = 'https://www.youtube.com/iframe_api';
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    </script>
+<script src="https://cdn.open.edu.au/website-header/default.js" defer></script>
+
+</body>
+</html>
