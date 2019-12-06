@@ -39,15 +39,15 @@
     <link href="https://cdn.open.edu.au/website-header/default.css" rel="stylesheet"/>
 
     
-<script>if (this.customElements) try { customElements.define('built-in', document.createElement('p').constructor, { 'extends': 'p' }); if (typeof Cypress !== 'undefined') throw new Error() } catch (a) { document.write('<script defer src="https://unpkg.com/@ungap/custom-elements-builtin@0.2.7/min.js" crossorigin="anonymous" ><' + '/script>') } else document.write('<script src="https://unpkg.com/document-register-element@1.13.2/build/document-register-element.js" crossorigin="anonymous" ><' + '/script>');</script>
+<script>if (this.customElements) try { customElements.define('built-in', document.createElement('p').constructor, { 'extends': 'p' }); if (typeof Cypress !== 'undefined') throw new Error() } catch (a) { document.write('<script src="https://unpkg.com/@ungap/custom-elements-builtin@0.2.7/min.js" crossorigin="anonymous" ><' + '/script>') } else document.write('<script src="https://unpkg.com/document-register-element@1.13.2/build/document-register-element.js" crossorigin="anonymous" ><' + '/script>');</script>
 
-<script>if (typeof HTMLElement === 'object') document.write('<script defer src="https://unpkg.com/custom-elements-es5-adapter@1.0.0/custom-elements-es5-adapter.js" crossorigin="anonymous"><' + '/script>')</script>
+<script>if (typeof HTMLElement === 'object') document.write('<script src="https://unpkg.com/custom-elements-es5-adapter@1.0.0/custom-elements-es5-adapter.js" crossorigin="anonymous"><' + '/script>')</script>
 
-<script defer src="https://polyfill.io/v3/polyfill.min.js?features=CustomEvent%2Cfetch%2CPromise%2CPromise.prototype.finally%2CNodeList.prototype.forEach%2CElement.prototype.classList%2CElement.prototype.remove%2CElement.prototype.matches%2CElement.prototype.closest%2CString.prototype.repeat%2CString.prototype.includes%2CObject.assign%2CArray.prototype.find%2CArray.prototype.findIndex"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=CustomEvent%2Cfetch%2CPromise%2CPromise.prototype.finally%2CNodeList.prototype.forEach%2CElement.prototype.classList%2CElement.prototype.remove%2CElement.prototype.matches%2CElement.prototype.closest%2CString.prototype.repeat%2CString.prototype.includes%2CObject.assign%2CArray.prototype.find%2CArray.prototype.findIndex"></script>
     
-<script defer src="https://www.open.edu.au/dist/vendors/jquery-3.4.1.min.js"></script>
+<script src="https://www.open.edu.au/dist/vendors/jquery-3.4.1.min.js"></script>
 
-        <script defer src="https://www.open.edu.au/dist/js/core.bundle.js?version=1417"></script>
+        <script src="https://www.open.edu.au/dist/js/core.bundle.js?version=1417"></script>
 
     
     <link href="styles.css?version=1417" rel="stylesheet" />
@@ -76,7 +76,7 @@ window.lpTag = window.lpTag || {}, 'undefined' == typeof window.lpTag._tagCount 
     window.featureFlagValues = {"display-save-icon-compare-view":true,"open-info-comparison-easy-apply":false,"show-qs-and-the-ranking-compare-view-degrees":false,"show-qs-and-the-ranking-compare-view-subjects":false};
 </script>
 
-    <!-- <script src="https://www.open.edu.au/dist/js/es6-promise.auto.min.js"></script> -->
+    <script src="https://www.open.edu.au/dist/js/es6-promise.auto.min.js"></script>
     <script src="https://www.open.edu.au/dist/js/ldclient.min.js"></script>
     <script type='application/ld+json'>
         {"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/www.open.edu.au\/","sameAs":["https:\/\/www.facebook.com\/OpenUnisAu","https:\/\/www.instagram.com\/openunisau\/","http:\/\/www.linkedin.com\/company\/56317","http:\/\/www.youtube.com\/user\/OpenUniversitiesAu","https:\/\/twitter.com\/OpenUnisAu"],"@id":"#organization","name":"Open Universities Australia","logo":"https:\/\/www.open.edu.au\/\/-\/\/media\/\/project\/\/oua\/\/logo\/\/open-universities-australia.svg"}
@@ -656,7 +656,7 @@ sc_visitor_id: "e81b038f-61c5-4fea-958b-861b9ba14a7a",
     </div>
 
     <div data-course-code="CUR-PWP211" id="nextstep-student-voices" page-type="subject"></div>
-    <script defer src="https://cdn.open.edu.au/nextstep-student-voices/default.js"></script>
+    <script src="https://cdn.open.edu.au/nextstep-student-voices/default.js" defer></script>
                         </div>
                         <div class="col-md-7">
                             
@@ -1136,7 +1136,26 @@ sc_visitor_id: "e81b038f-61c5-4fea-958b-861b9ba14a7a",
 
 </footer>
 
-    <script defer src="scripts.js?version=1417"></script>
+    <script src="lib/modernizr-2.6.2.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="lib/jquery-ui.js"></script>
+    <script src="lib/velocity.min.js"></script>
+    <script src="lib/jquery.validate.min.js"></script>
+    <script src="lib/jquery.maskedinput.min.js"></script>
+
+    <script src="lib/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="lib/jquery.validate.unobtrusive.min.js"></script>
+    <script src="lib/sitecore.wffm.main.min.js"></script>
+    <script src="lib/sitecore.wffm.min.js"></script>
+    <script src="lib/iframe_api.js"></script>
+    <script src="lib/owl.carousel.js"></script>
+    <script src="lib/jquery.touchSwipe.min.js"></script>
+    <script src="lib/jquery.inputmask.bundle.js"></script>
+
+    <!-- Fix for validation console errors: https://stackoverflow.com/a/51383742 -->
+    <!-- Fix for jQuery 3 and jQuery ui prior to 1.12 compat issue https://stackoverflow.com/a/50016548 -->
+    <script src="lib/jquery-migrate-3.0.0.min.js"></script>
+    <!-- endbuild -->
 
     <script type="text/javascript">
         var tag = document.createElement('script');
