@@ -1,1 +1,1 @@
-document.write('<link href="styles.css?version=1417" rel="stylesheet" />');
+document.querySelector('head').insertAdjacentHTML('afterbegin', '<link href="styles.css?version=1417" rel="stylesheet" />');
