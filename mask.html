@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mobile Masking Input</title>
+</head>
+<body>
+  <input id="maskedinput" type="tel" />
+  <script>
+    (function(maskedInput) {
+      var input = document.querySelector('#maskedinput');
+      var defaultValue = '04__-___-___';
+
+      input.value = defaultValue;
+
+      document.querySelector('#maskedinput').addEventListener('focus', function(e) {
+        var cursorPosition = maskedInput.validatePosition(e.target.value)
+        if (cursorPosition <= 4) {
+          e.target.setSelectionRange(cursorPosition, cursorPosition);
+        }
+        if (cursorPosition >= 5) {
+          e.target.setSelectionRange(cursorPosition + 1, cursorPosition + 1);
+        }
+        if (cursorPosition >= 8) {
+          e.target.setSelectionRange(cursorPosition + 2, cursorPosition + 2);
+        }
+      })
+
+      document.addEventListener('click', function(e) {
+        if (e.target.id === 'maskedinput') {
+          var cursorPosition = maskedInput.validatePosition(e.target.value)
+          if (cursorPosition <= 4) {
+            e.target.setSelectionRange(cursorPosition, cursorPosition);
+          }
+          if (cursorPosition >= 5) {
+            e.target.setSelectionRange(cursorPosition + 1, cursorPosition + 1);
+          }
+          if (cursorPosition >= 8) {
+            e.target.setSelectionRange(cursorPosition + 2, cursorPosition + 2);
+          }
+        }
+      })
+
+      document.addEventListener('input', function(e) {
+        if (e.target.id === 'maskedinput') {
+          var newValue = maskedInput.validateInput(e.target.value)
+          var inputValue = maskedInput.inputNewValue(newValue)
+          var cursorPosition = maskedInput.validatePosition(inputValue)
+          e.target.value = inputValue
+          if (cursorPosition <= 4) {
+            e.target.setSelectionRange(cursorPosition, cursorPosition);
+          }
+          if (cursorPosition >= 5) {
+            e.target.setSelectionRange(cursorPosition + 1, cursorPosition + 1);
+          }
+          if (cursorPosition >= 8) {
+            e.target.setSelectionRange(cursorPosition + 2, cursorPosition + 2);
+          }
+        }
+      })
+
+      String.prototype.replaceAt = function(index, replacement) {
+        return this.substr(0, index) + replacement + this.substr(index + replacement.length);
+      }
+
+      maskedInput.validateInput = function(value) {
+        var newValue = value.replace(/[^0-9]/g, '');
+        return newValue
+      }
+
+      maskedInput.validatePosition = function(value) {
+        return value.replace(/[^0-9]/g, '').length;
+      }
+
+      maskedInput.inputNewValue = function(value) {
+        switch(value.length) {
+          case 0:
+          case 1:
+          case 2: {
+            return defaultValue;
+          }
+          case 3: {
+            return value + '_-___-___';
+          }
+          case 4: {
+            return value + '-___-___';
+          }
+          case 5: {
+            var group1 = value.substring(0, 4);
+            var group2 = value.substring(4, 5);
+            return group1 + '-' + group2 + '__-___';
+          }
+          case 6: {
+            var group1 = value.substring(0, 4);
+            var group2 = value.substring(4, 6);
+            return group1 + '-' + group2 + '_-___';
+          }
+          case 7: {
+            var group1 = value.substring(0, 4);
+            var group2 = value.substring(4, 7);
+            return group1 + '-' + group2 + '-___';
+          }
+          case 8: {
+            var group1 = value.substring(0, 4);
+            var group2 = value.substring(4, 7);
+            var group3 = value.substring(7, 8);
+            return group1 + '-' + group2 + '-' + group3 + '__';
+          }
+          case 9: {
+            var group1 = value.substring(0, 4);
+            var group2 = value.substring(4, 7);
+            var group3 = value.substring(7, 9);
+            return group1 + '-' + group2 + '-' + group3 + '_';
+          }
+          case 10: {
+            var group1 = value.substring(0, 4);
+            var group2 = value.substring(4, 7);
+            var group3 = value.substring(7, 10);
+            return group1 + '-' + group2 + '-' + group3;
+          }
+          default: {
+            var group1 = value.substring(0, 4);
+            var group2 = value.substring(4, 7);
+            var group3 = value.substring(7, 10);
+            return group1 + '-' + group2 + '-' + group3;
+          }
+        }
+      }
+    })(window.maskedInput = window.maskedInput || {})
+  </script>
+</body>
+</html>
